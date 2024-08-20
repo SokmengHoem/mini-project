@@ -6,11 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.mini_pos.entity.Brand;
+import com.example.mini_pos.model.entity.Brand;
 import com.example.mini_pos.execption.ResourceNotFoundException;
 import com.example.mini_pos.mapper.BrandMapper;
 import com.example.mini_pos.repository.BrandRepository;
-import com.example.mini_pos.response.BrandResponse;
+import com.example.mini_pos.model.response.BrandResponse;
 import com.example.mini_pos.service.BrandService;
 
 @Service
@@ -30,7 +30,7 @@ public class BrandServiceImpl implements BrandService{
 
 	@Override
 	public Brand getById(Long id) {
-		return branchRepository.findById(id)
+		return branchRepository.findByIdAndIsDeletedFalse(id)
 		.orElseThrow(() -> new ResourceNotFoundException("Brand", id));
 	}
 
@@ -44,7 +44,7 @@ public class BrandServiceImpl implements BrandService{
 	@Override
 	public List<BrandResponse> listAll() {
 		// TODO Auto-generated method stub
-		return branchRepository.findAll().stream()
+		return branchRepository.findByIsDeletedFalseOrderByIdDesc().stream()
 				.map(brandMapper::toDTO)
 				.collect(Collectors.toList());
 	}
@@ -53,8 +53,9 @@ public class BrandServiceImpl implements BrandService{
 	public Brand deleteById(Long id) {
 		// TODO Auto-generated method stub
 		Brand byIdBrand =  getById(id);
-		 branchRepository.delete(byIdBrand);
-		 return byIdBrand;
+		byIdBrand.setDeleted(true);
+		Brand save = branchRepository.save(byIdBrand);
+		return save;
 	}
 	
 }

@@ -1,4 +1,4 @@
-package com.example.mini_pos.request;
+package com.example.mini_pos.model.request;
 
 import org.hibernate.validator.constraints.Length;
 

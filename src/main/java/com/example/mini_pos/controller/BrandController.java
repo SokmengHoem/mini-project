@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.mini_pos.entity.Brand;
+import com.example.mini_pos.model.entity.Brand;
 import com.example.mini_pos.mapper.BrandMapper;
-import com.example.mini_pos.request.BrandRequest;
-import com.example.mini_pos.response.BrandResponse;
+import com.example.mini_pos.model.request.BrandRequest;
+import com.example.mini_pos.model.response.BrandResponse;
 import com.example.mini_pos.service.BrandService;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("branchs")
+@RequestMapping("brands")
 public class BrandController {
 	
 	@Autowired

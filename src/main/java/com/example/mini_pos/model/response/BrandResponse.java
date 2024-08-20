@@ -1,4 +1,4 @@
-package com.example.mini_pos.response;
+package com.example.mini_pos.model.response;
 
 import lombok.Data;
 

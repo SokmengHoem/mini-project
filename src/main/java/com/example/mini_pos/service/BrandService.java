@@ -2,8 +2,8 @@ package com.example.mini_pos.service;
 
 import java.util.List;
 
-import com.example.mini_pos.entity.Brand;
-import com.example.mini_pos.response.BrandResponse;
+import com.example.mini_pos.model.entity.Brand;
+import com.example.mini_pos.model.response.BrandResponse;
 
 public interface BrandService {
 	Brand saveData(Brand branch);
