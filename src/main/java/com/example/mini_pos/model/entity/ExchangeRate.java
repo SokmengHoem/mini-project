@@ -5,19 +5,13 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "generalSettings")
-public class GeneralSetting {
+@Table(name = "exchangeRates")
+public class ExchangeRate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String siteTitle;
-
-    private String siteLogo;
-
-    private String sitePhone;
-
-    private String siteAddress;
+    private Double exchangeRate;
 
     @Column(name = "is_deleted", columnDefinition = "boolean default false")
     private boolean isDeleted;

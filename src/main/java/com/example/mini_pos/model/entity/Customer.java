@@ -22,5 +22,6 @@ public class Customer {
 
     private String customerAddress;
 
+    @Column(name = "is_deleted", columnDefinition = "boolean default false")
     private boolean isDeleted;
 }

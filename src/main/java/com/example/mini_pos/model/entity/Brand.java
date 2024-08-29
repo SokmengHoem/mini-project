@@ -20,7 +20,7 @@ public class Brand {
 	@Column(name = "branch_name")
 	private String name;
 
-	@Column(name = "is_delete", columnDefinition = "boolean default false")
+	@Column(name = "is_deleted", columnDefinition = "boolean default false")
 	private boolean isDeleted;
 }
 

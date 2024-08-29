@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.example.mini_pos.model.entity.Brand;
 import com.example.mini_pos.execption.ResourceNotFoundException;
 import com.example.mini_pos.mapper.BrandMapper;
-import com.example.mini_pos.repository.BrandRepository;
+import com.example.mini_pos.repositories.BrandRepository;
 import com.example.mini_pos.model.response.BrandResponse;
 import com.example.mini_pos.service.BrandService;
 

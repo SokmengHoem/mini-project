@@ -23,5 +23,6 @@ public class Company {
 
     private String image;
 
+    @Column(name = "is_deleted", columnDefinition = "boolean default false")
     private boolean isDeleted;
 }
