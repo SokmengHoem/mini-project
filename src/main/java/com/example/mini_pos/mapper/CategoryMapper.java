@@ -8,6 +8,10 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "isDeleted", ignore = true)
+    @Mapping(target = "children", ignore = true)
     @Mapping(target = "parent.id", source = "parentId")
     Category toEntity(CategoryRequest categoryRequest);
 

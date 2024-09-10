@@ -14,10 +14,10 @@ import lombok.Data;
 public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "branch_id")
+	@Column(name = "brand_id")
 	private Long id;
 	
-	@Column(name = "branch_name")
+	@Column(name = "brand_name")
 	private String name;
 
 	@Column(name = "is_deleted", columnDefinition = "boolean default false")
